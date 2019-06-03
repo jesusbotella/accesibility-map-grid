@@ -1,0 +1,43 @@
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: calc(100vh / 4);
+}
+
+.grid__item {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.grid__item::after {
+  content: attr(data-element-position);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  font-size: 0.8em;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 4px;
+  border-radius: 2px;
+}
