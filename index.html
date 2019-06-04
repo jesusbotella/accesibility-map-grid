@@ -10,10 +10,22 @@
     <!-- CSS styles go here -->
     <link rel="stylesheet" href="src/styles/styles.css">
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div id="map"></div>
+
+    <aside class="explanation">
+      <h1 class="explanation__title">Voice-based Map Accessibility</h1>
+      <p class="explanation__subtitle">
+        Example based on Apple's WWDC map accessibility concept introduced for MacOS Catalina
+      </p>
+      <p class="explanation__subtitle">
+        Say <code>show me the numbers</code> and start saying numbers to zoom in to a particular map area
+      </p>
+    </aside>
 
     <div class="grid">
       <div class="grid__item" data-element-position="1"></div>

@@ -1,15 +1,8 @@
 annyang.debug(true);
 
-export default function speechRecognition (onCommandRecognized) {
-  const annyangCommands = {
-    '*number': function () {
-      onCommandRecognized.apply(this, arguments);
-      annyang.resume();
-    }
-  };
-
+export default function speechRecognition (commands) {
   // Add our commands to annyang
-  annyang.addCommands(annyangCommands);
+  annyang.addCommands(commands);
 
   // Start listening.
   annyang.start();
