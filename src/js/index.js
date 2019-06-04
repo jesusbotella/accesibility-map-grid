@@ -1,32 +1,15 @@
-import './map.js';
-import { clickOnElement } from './interaction.js';
-import initSpeechRecognition from './speech-recognition.js';
-
-const mapCanvas = document.querySelector('.mapboxgl-canvas-container');
-const grid = document.querySelector('.grid');
-const explanation = document.querySelector('.explanation');
-
-function onShowGridCommandRecognized() {
-  grid.classList.add('grid--active');
-  explanation.classList.add('explanation--hidden');
-}
-
-function onNumberRecognized(number) {
-  const parsedNumber = parseFloat(number);
-
-  if (isNaN(parsedNumber)) {
-    return;
-  }
-
-  clickOnElement(mapCanvas, parsedNumber);
-}
+import initSpeechRecognition from './speech-recognition/speech-recognition.js';
+import * as commandHandlers from './speech-recognition/command-handlers.js';
 
 const annyangCommands = {
+  'zoom out': function () {
+    commandHandlers.onZoomOut.apply(this, arguments)
+  },
   'show me the numbers': function () {
-    onShowGridCommandRecognized.apply(this, arguments);
+    commandHandlers.onShowGridCommandRecognized.apply(this, arguments);
   },
   '*number': function () {
-    onNumberRecognized.apply(this, arguments);
+    commandHandlers.onNumberRecognized.apply(this, arguments);
   }
 };
 

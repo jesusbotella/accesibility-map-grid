@@ -54,6 +54,11 @@ p {
   margin-top: 8px;
 }
 
+.explanation__link {
+  display: block;
+  margin-top: 8px;
+}
+
 /*
 * Numbered Grid
 */
