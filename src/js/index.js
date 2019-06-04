@@ -5,7 +5,7 @@ const annyangCommands = {
   'zoom out': function () {
     commandHandlers.onZoomOut.apply(this, arguments)
   },
-  'show me the numbers': function () {
+  'enable controls': function () {
     commandHandlers.onShowGridCommandRecognized.apply(this, arguments);
   },
   '*number': function () {
